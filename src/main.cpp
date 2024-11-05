@@ -62,7 +62,7 @@ int main()
 
     std::cout << "\nNormalizing vector v7\n";
     auto v7_shared_ptr = std::make_shared<math::Vector3D>(std::move(v7));
-    math::normalize(v7_shared_ptr);
+    v7_shared_ptr->normalize();
     std::cout << "print v7_shared_ptr\n";
     v7_shared_ptr->print();
 }

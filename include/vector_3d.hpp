@@ -31,26 +31,55 @@ namespace math
         Vector3D &operator=(Vector3D &&);
 
         /// @brief Выводит адрес указателя и координаты вектора
-        void print();
+        void print() const;
+
+        /**
+         * @brief Вычисляет длину переданного вектор
+         */
+        double length() const;
 
         /**
          * @brief Выполняет нормализацию переданного в аргументе вектора
          */
-        friend void normalize(std::shared_ptr<Vector3D> &);
+        void normalize();
+
+        /**
+         * @brief Возвращает сумму 3D векторов
+         */
+        friend Vector3D vectorAddition(const Vector3D &, const Vector3D &);
+
+        /**
+         * @brief Возвращает разность 3D векторов
+         */
+        friend Vector3D vectorSubstraction(const Vector3D &, const Vector3D &);
+
+        /**
+         * @brief Возвращает скалярное произведение 3D векторов
+         */
+        friend Vector3D vectorDotProduct(const Vector3D &, const Vector3D &);
 
     protected:
         /**
          * @brief Указатель на std::vector с контравариантными координиатами 3d
          * вектора
-        */
+         */
         std::unique_ptr<std::vector<double>> coords_;
     };
 
     /**
-     * @brief Выполняет нормализацию переданного в аргументе вектора
+     * @brief Возвращает сумму 3D векторов
      */
-    void normalize(std::shared_ptr<Vector3D> &);
-    
+    Vector3D vectorAddition(const Vector3D &, const Vector3D &);
+
+    /**
+     * @brief Возвращает разность 3D векторов
+     */
+    Vector3D vectorSubstraction(const Vector3D &, const Vector3D &);
+
+    /**
+     * @brief Возвращает скалярное произведение 3D векторов
+     */
+    Vector3D vectorDotProduct(const Vector3D &, const Vector3D &);
 }
 
 #endif
