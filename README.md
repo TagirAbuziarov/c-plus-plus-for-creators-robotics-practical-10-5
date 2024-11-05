@@ -11,5 +11,5 @@ sudo cp build/vector_3d.cpython-38-x86_64-linux-gnu.so /usr/local/lib/python3.8/
 ### Запуск тестов
 1. Из корневой директории этого репозитория выполнить:
 ```
-
+python3 scripts/vector_3d_library_test.py
 ```
